@@ -23,7 +23,7 @@ We used Python 3.9.9 and [PyTorch](https://pytorch.org/) 1.10.1 to train and tes
 
 Alternatively, the following command will pull and install the latest commit from this repository, along with its Python dependencies:
 
-    pip install git+https://github.com/openai/whisper.git 
+    pip install git+https://github.com/trdtt/whisper.git 
 
 To update the package to the latest version of this repository, please run:
 
