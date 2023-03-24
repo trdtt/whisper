@@ -360,11 +360,20 @@ def transcribe(
             # update progress bar
             pbar.update(min(content_frames, seek) - previous_seek)
 
-    return dict(
-        text=tokenizer.decode(all_tokens[len(initial_prompt_tokens) :]),
-        segments=all_segments,
-        language=language,
-    )
+            yield(
+                [
+                    {"id": i, "total_frames": content_frames, **segment}
+                    for i, segment in enumerate(
+                        current_segments, start=len(all_segments)
+                    )
+                ]
+            )
+
+    # return dict(
+    #     text=tokenizer.decode(all_tokens[len(initial_prompt_tokens) :]),
+    #     segments=all_segments,
+    #     language=language,
+    # )
 
 
 def cli():
